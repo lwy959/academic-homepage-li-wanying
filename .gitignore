@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+homepage-screenshot.png
+project-screenshot.png
+.DS_Store
+Thumbs.db

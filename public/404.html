@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting</title>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        var search = window.location.search || "";
+        var hash = window.location.hash || "";
+        var segments = path.split("/").filter(Boolean);
+        var repo = segments.length > 0 ? "/" + segments[0] + "/" : "/";
+        var rest = repo === "/" ? path : "/" + segments.slice(1).join("/");
+        window.location.replace(repo + "?redirect=" + encodeURIComponent(rest + search + hash));
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
