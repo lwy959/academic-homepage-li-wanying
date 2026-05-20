@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Layout } from "../components/Layout";
 import { projects } from "../data/profile";
+import { appPath } from "../utils/paths";
 
 export function ProjectsPage() {
   return (
@@ -22,7 +23,7 @@ export function ProjectsPage() {
                 {project.keywords.slice(0, 6).map((keyword) => <li key={keyword}>{keyword}</li>)}
               </ul>
             </div>
-            <a className="button secondary" href={`/projects/${project.slug}`}>
+            <a className="button secondary" href={appPath(`/projects/${project.slug}`)}>
               Details <ArrowRight size={17} />
             </a>
           </article>

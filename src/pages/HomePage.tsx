@@ -2,6 +2,7 @@ import { ArrowRight, Download, Mail, MapPin } from "lucide-react";
 import { Layout } from "../components/Layout";
 import { Section } from "../components/Section";
 import { about, awards, basicInfo, education, projects, researchInterests, skills } from "../data/profile";
+import { appPath } from "../utils/paths";
 
 export function HomePage() {
   return (
@@ -13,8 +14,8 @@ export function HomePage() {
           <h2>{basicInfo.nameEn}</h2>
           <p>{basicInfo.headline}</p>
           <div className="hero-actions">
-            <a className="button primary" href={basicInfo.cvUrl}><Download size={18} />Download CV</a>
-            <a className="button secondary" href="/projects"><ArrowRight size={18} />View Projects</a>
+            <a className="button primary" href={appPath(basicInfo.cvUrl)}><Download size={18} />Download CV</a>
+            <a className="button secondary" href={appPath("/projects")}><ArrowRight size={18} />View Projects</a>
             <a className="button ghost" href={`mailto:${basicInfo.email}`}><Mail size={18} />Email Me</a>
           </div>
         </div>
@@ -46,7 +47,7 @@ export function HomePage() {
       <Section id="projects" eyebrow="Selected" title="Selected Projects">
         <div className="project-grid">
           {projects.map((project) => (
-            <a className="project-card" href={`/projects/${project.slug}`} key={project.slug}>
+            <a className="project-card" href={appPath(`/projects/${project.slug}`)} key={project.slug}>
               <div>
                 <span className="project-type">{project.type}</span>
                 {project.status ? <span className="status">{project.status}</span> : null}

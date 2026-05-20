@@ -2,6 +2,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Layout } from "../components/Layout";
 import { projects } from "../data/profile";
 import { NotFoundPage } from "./NotFoundPage";
+import { appPath } from "../utils/paths";
 
 type ProjectPageProps = {
   slug: string;
@@ -14,7 +15,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
   return (
     <Layout>
       <article className="project-detail">
-        <a className="back-link" href="/projects"><ArrowLeft size={16} />Back to projects</a>
+        <a className="back-link" href={appPath("/projects")}><ArrowLeft size={16} />Back to projects</a>
         <header className="detail-header">
           <span className="project-type">{project.type}</span>
           <h1>{project.title}</h1>
@@ -44,7 +45,7 @@ export function ProjectPage({ slug }: ProjectPageProps) {
             <h2>Materials</h2>
             <div className="material-links">
               {project.links.map((link) => (
-                <a href={link.href} key={link.href}>
+                <a href={appPath(link.href)} key={link.href}>
                   {link.label}<ExternalLink size={15} />
                 </a>
               ))}
