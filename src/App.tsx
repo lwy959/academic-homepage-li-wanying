@@ -9,7 +9,8 @@ function normalizePath() {
   const redirected = params.get("redirect");
   if (redirected) {
     window.history.replaceState({}, "", appPath(redirected));
-    return redirected.replace(/\/$/, "") || "/";
+    const route = redirected.split(/[?#]/)[0];
+    return route.replace(/\/$/, "") || "/";
   }
   return routeFromLocation(window.location.pathname);
 }
