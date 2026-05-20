@@ -2,14 +2,14 @@ import { HomePage } from "./pages/HomePage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { ProjectPage } from "./pages/ProjectPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import { routeFromLocation } from "./utils/paths";
+import { appPath, routeFromLocation } from "./utils/paths";
 
 function normalizePath() {
   const params = new URLSearchParams(window.location.search);
   const redirected = params.get("redirect");
   if (redirected) {
-    window.history.replaceState({}, "", redirected);
-    return routeFromLocation(window.location.pathname);
+    window.history.replaceState({}, "", appPath(redirected));
+    return redirected.replace(/\/$/, "") || "/";
   }
   return routeFromLocation(window.location.pathname);
 }
