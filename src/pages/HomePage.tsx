@@ -20,6 +20,9 @@ export function HomePage() {
           </div>
         </div>
         <aside className="hero-panel" aria-label="Profile facts">
+          <figure className="portrait-frame">
+            <img src={appPath(basicInfo.portraitUrl)} alt="李宛莹 portrait" />
+          </figure>
           <div><span>School</span><strong>{basicInfo.school}</strong></div>
           <div><span>Major</span><strong>{basicInfo.major}</strong></div>
           <div><span>GPA / Rank</span><strong>{education.gpa} · {education.rank}</strong></div>
@@ -106,7 +109,6 @@ export function HomePage() {
         <div className="contact-panel">
           <p><MapPin size={17} /> {basicInfo.school}</p>
           <p><Mail size={17} /> <a href={`mailto:${basicInfo.email}`}>{basicInfo.email}</a></p>
-          <p>Phone: <a href={`tel:${basicInfo.phone}`}>{basicInfo.phone}</a></p>
           <p>GitHub: <a href={basicInfo.github}>{basicInfo.github}</a></p>
         </div>
       </Section>

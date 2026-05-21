@@ -1,4 +1,4 @@
-import { Mail, Phone, FileText } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 import { basicInfo } from "../data/profile";
 import { appPath } from "../utils/paths";
 
@@ -29,7 +29,6 @@ export function Layout({ children }: LayoutProps) {
         </div>
         <div className="footer-links">
           <a href={`mailto:${basicInfo.email}`}><Mail size={16} />{basicInfo.email}</a>
-          <a href={`tel:${basicInfo.phone}`}><Phone size={16} />{basicInfo.phone}</a>
           <a href={appPath(basicInfo.cvUrl)}><FileText size={16} />Download CV</a>
         </div>
       </footer>

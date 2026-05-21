@@ -25,10 +25,10 @@ export const basicInfo = {
   major: "信息与计算科学",
   grade: "2023级本科生",
   email: "liwy266@mail2.sysu.edu.cn",
-  phone: "15018060967",
   headline:
     "中山大学数学学院信息与计算科学本科生，关注可靠 AI 推理、持续学习、模型稳定性与统计机器学习。",
   cvUrl: "/files/Li-Wanying-CV.pdf",
+  portraitUrl: "/images/li-wanying-profile.png",
   github: "https://github.com/lwy959",
 };
 
