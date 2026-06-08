@@ -28,7 +28,7 @@ export const basicInfo = {
   headline:
     "中山大学数学学院信息与计算科学本科生，具有数学统计、数值计算与程序设计基础，关注统计机器学习、大数据分析、工程智能与可靠 AI 系统中的建模和算法问题。",
   cvUrl: "/files/Li-Wanying-CV.pdf",
-  portraitUrl: "/images/li-wanying-profile.png",
+  portraitUrl: "/images/li-wanying-huangshan.jpg",
   github: "https://github.com/lwy959",
 };
 
